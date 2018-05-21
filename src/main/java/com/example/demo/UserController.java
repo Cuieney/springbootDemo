@@ -72,7 +72,7 @@ public class UserController {
                 // 实际项目中，文件需要输出到指定位置，需要在增加代码处理。
                 // 还有关于文件格式限制、文件大小限制，详见：中配置。
                 BufferedOutputStream out = new BufferedOutputStream(
-                        new FileOutputStream(new File("/Users/cuieneydemacbook/Desktop/server/" + file.getOriginalFilename())));
+                        new FileOutputStream(new File("/usr/tmp/projects/files/" + file.getOriginalFilename())));
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
@@ -121,7 +121,7 @@ public class UserController {
 
 
         // Get your file stream from wherever.
-        String fullPath = "/Users/cuieneydemacbook/Desktop/server/patch_signed_7zip.apk";
+        String fullPath = "/usr/tmp/projects/files/patch_signed_7zip.apk";
         File downloadFile = new File(fullPath);
 
         ServletContext context = request.getServletContext();
