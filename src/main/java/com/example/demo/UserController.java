@@ -108,11 +108,12 @@ public class UserController {
         String android_patch = System.getenv("ANDROID_PATCH");
         if (android_patch.equals("true")) {
             responseObject.setCode("0");
+            responseObject.setMessage("有新的patch");
 
         }else{
             responseObject.setCode("1");
+            responseObject.setMessage("无新的patch");
         }
-        responseObject.setMessage("有新的patch");
         return responseObject;
     }
 
