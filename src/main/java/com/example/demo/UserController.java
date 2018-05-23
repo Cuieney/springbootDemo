@@ -105,12 +105,12 @@ public class UserController {
     public ResponseObject patchCheck(@RequestParam String version){
         ResponseObject responseObject = new ResponseObject();
         logger.info(version+"  version");
-        if (version.equals("base_version")) {
-            responseObject.setCode("110");
+        String android_patch = System.getenv("ANDROID_PATCH");
+        if (android_patch.equals("true")) {
+            responseObject.setCode("0");
 
-        }else if("patch_version".equals(version)){
-            responseObject.setCode("100");
-
+        }else{
+            responseObject.setCode("1");
         }
         responseObject.setMessage("有新的patch");
         return responseObject;
